@@ -1,4 +1,4 @@
-# Algoritmos Deep Learning para el estudio de Covid19 en imágenes de CT. 
+# Algoritmos Deep Learning para el estudio de Covid19 en imágenes en TAC de tórax. 
 
 Acá se presenta una etapa básica de un pipeline mayor en desarrollo donde se identifican los cortes tomográficos que exhiben lesiones de Covid19.
 
