@@ -1,10 +1,10 @@
 # Algoritmos Deep Learning para el estudio de Covid19 en imágenes en TAC de tórax. 
 
-Acá se presenta una etapa básica de un pipeline mayor en desarrollo donde se identifican los cortes tomográficos que exhiben lesiones de Covid19.
+Acá se presenta una etapa básica de un pipeline mayor donde se identifican los cortes tomográficos que exhiben lesiones de Covid19. El objetivo final del pipeline, actualmente en desarrollo, es la cuantificación de la extensión de los distintos tipos de lesiones características de la neumonía por SARS-CoV-2 (Ground-glass opacification, pleural effusion, consolidation, etc.) mediante el uso de técnicas de segmentación.
 
 # Dataset
 
-El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1], la información de los pacientes fue debidamente eliminada de acuerdo a los protocolos de imágenes médicas. En las imágenes se muestran dos cortes de pacientes diferentes. El de arriba corresponde a una paciente normal mientras que el segundo exhibe lesiones características de la neumonía por SARS-CoV-2 (Ground-glass opacification, pleural effusion, etc.). La primera columna muestra la imagen original y la segunda la imagen segmentada utilizando una máscara multiplicativa (solo se conservan los pixeles correspondientes al pulmón). 
+El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1], la información de los pacientes fue debidamente eliminada de acuerdo a los protocolos de imágenes médicas. En las imágenes se muestran dos cortes de pacientes diferentes. La fila ssuperior corresponde a una paciente normal mientras las imégenes inferiores exhiben  el patrón de opacidades tipo vidrio esmerilado de predominio periférico característica de la afección. La primera columna muestra la imagen original y la segunda la imagen segmentada utilizando una máscara multiplicativa (solo se conservan los pixeles correspondientes al pulmón). 
 
 
 <p align="center">
