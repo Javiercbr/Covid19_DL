@@ -21,7 +21,7 @@ El modelo consiste en una DenseNet121 con una capa de salida con una activación
 
 # Entrenamiento
 
-El entrenamiento se realizó sobre un conjunto de más de 1200 cortes pertenecientes a 108 pacientes separados en conjuntos de entrenamiento, validación y testeo. Se respetó el balance entre casos normales y positivos (entre 48-53% en cada conjunto. Se utilizó un optimizador Adam con un learning rate adaptativo (valor inicial de 0.0001) y binary cross entropy como función de perdida. El algoritmo se entreno en una GPU GeForce GTX 1650 Ti con early stopping al alcanzar una meseta en la pérdida en el conjunto de validación.
+El entrenamiento se realizó sobre un conjunto de más de 1200 cortes pertenecientes a 108 pacientes separados en conjuntos de entrenamiento, validación y testeo. Se respetó el balance entre casos normales y positivos (entre 48-53% en cada conjunto). Se utilizó un optimizador Adam con un learning rate adaptativo (valor inicial de 0.0001) y binary cross entropy como función de perdida. El algoritmo se entreno en una GPU GeForce GTX 1650 Ti con early stopping al alcanzar una meseta en la pérdida medida para el conjunto de validación.
 
 # Resultados
 
