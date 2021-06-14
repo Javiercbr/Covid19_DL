@@ -30,7 +30,10 @@ Se obtuvo una accuracy final de 0.923 (loss=0.227) una matriz de confusión con 
   <img src="ROC.png" width="400" title="seg1">
 </p>
 
-Para las TACs mostradas arriba (extraidas del conjunto de testeo) las probabilidades son P=0.99 para el caso positivo y P=0.05 para el caso negativo.
+Para las TACs mostradas arriba (extraidas del conjunto de testeo) las probabilidades son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo.
+
+# Referencias
+
 [1] Afshar, P., Heidarian, S., Enshaei, N. et al. COVID-CT-MD, COVID-19 computed tomography scan dataset applicable in machine learning and deep learning. Sci Data 8, 121 (2021). https://doi.org/10.1038/s41597-021-00900-3
 
 [2] Pranav Rajpurkar ,Jeremy Irvin ,Robyn L. Ball,Kaylie Zhu et al. Deep learning for chest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists PLOS Medicine, November 2018.
