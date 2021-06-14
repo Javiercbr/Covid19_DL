@@ -4,7 +4,7 @@ Acá se presenta una etapa básica de un pipeline mayor donde se identifican los
 
 # Dataset
 
-El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1], la información de los pacientes fue debidamente eliminada de acuerdo a los protocolos de imágenes médicas. En las imágenes se muestran dos cortes de pacientes diferentes. La fila ssuperior corresponde a una paciente normal mientras las imégenes inferiores exhiben  el patrón de opacidades tipo vidrio esmerilado de predominio periférico característica de la afección. La primera columna muestra la imagen original y la segunda la imagen segmentada utilizando una máscara multiplicativa (solo se conservan los pixeles correspondientes al pulmón). 
+El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1], la información de los pacientes fue debidamente eliminada de acuerdo a los protocolos de imágenes médicas. En las imágenes se muestran dos cortes de pacientes diferentes. La columna izquierda corresponde a una paciente normal mientras las imágenes a la derecha exhiben el patrón típico de la neumonía por Covid19: opacidades tipo vidrio esmerilado de predominio periférico. La primera fila muestra la imagen original y la segunda la imagen segmentada y la tercera muestra la máscara multiplicativa usada en la segmentación para conservar solo los pixeles correspondientes al pulmón. 
 
 
 <p align="center">
@@ -17,7 +17,7 @@ El modelo fue entrenado con cortes tomográficos axiales extraídos de la base d
 
 # Modelo
 
-El modelo consiste en una DenseNet121 con una capa de salida con una activación sigmoidea y entrega una probabilidad de que la imagen sea positiva para Covid19. La arquitectura se inspiró en [2] donde se demostró la eficacia de estas configuraciones para la clasificación multiclase, i.e. varias patologías, de radiografías de tórax. Previo a la clasificación, se requiere una segmentación, se pueden encontrar varios repositorios con herramientas de segmentación eficientes, por ejemplo: https://github.com/JoHof/lungmask. 
+El modelo consiste en una DenseNet121 con una capa de salida con una activación sigmoidea y entrega una probabilidad de que la imagen sea positiva para Covid19. Se utilizó la API de Keras. La arquitectura se inspiró en [2] donde se demostró la eficacia de estas configuraciones para la clasificación multiclase, i.e. varias patologías, de radiografías de tórax. Previo a la clasificación, se requiere una segmentación, se pueden encontrar varios repositorios con herramientas de segmentación eficientes, por ejemplo: https://github.com/JoHof/lungmask. 
 
 # Entrenamiento
 
@@ -31,7 +31,7 @@ Se obtuvo una accuracy final de 0.923 (loss=0.227) una matriz de confusión con 
   <img src="ROC.png" width="400" title="seg1">
 </p>
 
-Para las TACs mostradas arriba (extraidas del conjunto de testeo) las probabilidades son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo.
+Para las TACs mostradas arriba (extraidas del conjunto de testeo) las probabilidades predichas son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo.
 
 # Referencias
 
