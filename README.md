@@ -1,12 +1,10 @@
 # ML_Covid19
-Algoritmos de detección de Covid19 en imágenes de CT
+Algoritmos Deep Learning para el estudio de Covid19 en imágenes de CT
 
 
 
 
-
-
-El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1]. La imagen muestra dos cortes de pacientes diferentes. El primero corresponde a una paciente normal mientras que el segundo exhibe lesiones características de la neumonía por SARS-CoV-2 (Ground-glass opacification, pleural effusion, etc.). La primera columna muestra la imagen original y la segunda la imagen segmentada utilizando una máscara multiplicativa (solo se conservan los pixeles correspondientes al pulmón). 
+El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1], la información de los pacientes fue debidamente eliminada de acuerdo a los protocolos de imágenes médicas. En las imágenes se muestran dos cortes de pacientes diferentes. El de arriba corresponde a una paciente normal mientras que el segundo exhibe lesiones características de la neumonía por SARS-CoV-2 (Ground-glass opacification, pleural effusion, etc.). La primera columna muestra la imagen original y la segunda la imagen segmentada utilizando una máscara multiplicativa (solo se conservan los pixeles correspondientes al pulmón). 
 
 
 <p align="center">
@@ -20,6 +18,10 @@ El modelo fue entrenado con cortes tomográficos axiales extraídos de la base d
 El modelo consiste en una DenseNet121 con una capa de salida con una activación sigmoidea y entrega una probabilidad de que la imagen sea positiva para Covid19. La arquitectura se inspiró en [2] donde se demostró la eficacia de estas configuraciones para la clasificación multiclase, i.e. varias patologías, de radiografías de tórax. Previo a la clasificación, se requiere una segmentación, se pueden encontrar varios repositorios con herramientas de segmentación eficientes, por ejemplo: https://github.com/JoHof/lungmask. 
 
 El entrenamiento se realizó sobre un conjunto de más de 1200 cortes pertenecientes a 108 pacientes separados en conjuntos de entrenamiento, validación y testeo. Se respetó el balance entre casos normales y positivos (entre 48-53% en cada conjunto. Se utilizó un optimizador Adam con un learning rate adaptativo (valor inicial de 0.0001) y binary cross entropy como función de perdida. El algoritmo se entreno en una GPU GeForce GTX 1650 Ti con early stopping al alcanzar una meseta en la pérdida en el conjunto de validación. Se obtuvo una accuracy final de 0.923 (loss=0.227) una matriz de confusión con VP=60, VN=60, FP=9 y FN=1 y un misclassification rate de 0.083. En la figura se muestra la curva ROC.
+
+<p align="center">
+  <img src="ROC.png" width="400" title="seg1">
+</p>
 
 
 [1] Afshar, P., Heidarian, S., Enshaei, N. et al. COVID-CT-MD, COVID-19 computed tomography scan dataset applicable in machine learning and deep learning. Sci Data 8, 121 (2021). https://doi.org/10.1038/s41597-021-00900-3
