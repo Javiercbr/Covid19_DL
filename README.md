@@ -1,6 +1,6 @@
 # Algoritmos Deep Learning para el estudio de Covid19 en imágenes de TAC de tórax. 
 
-Acá se presenta una etapa básica de un pipeline mayor donde se identifican los cortes tomográficos que exhiben lesiones de Covid19. El objetivo final del pipeline, actualmente en desarrollo, es la cuantificación de la extensión de los distintos tipos de lesiones características de la neumonía por SARS-CoV-2 (Ground-glass opacification, pleural effusion, consolidation, etc.) mediante el uso de técnicas de segmentación.
+Acá se presenta un resultado preliminar: una etapa básica de un pipeline mayor donde se identifican los cortes tomográficos que exhiben lesiones de Covid19. El objetivo final del pipeline, actualmente en desarrollo, es la cuantificación de la extensión de los distintos tipos de lesiones características de la neumonía por SARS-CoV-2 (Ground-glass opacification, pleural effusion, consolidation, etc.) mediante el uso de técnicas de segmentación.
 
 # Dataset
 
