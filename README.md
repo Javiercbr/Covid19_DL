@@ -4,7 +4,7 @@ Acá se presenta un resultado preliminar: una etapa básica de un pipeline mayor
 
 # Dataset
 
-El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1], la información de los pacientes fue debidamente eliminada de acuerdo con los protocolos de imágenes médicas. En las imágenes se muestran dos cortes de pacientes diferentes. La columna izquierda corresponde a una paciente normal mientras las imágenes a la derecha exhiben el patrón típico de la neumonía por Covid19: opacidades tipo vidrio esmerilado de predominio periférico. La primera fila muestra la imagen original, la segunda fila la imagen segmentada y la tercera muestra la máscara multiplicativa. Esta última se usa para la segmentación de manera de conservar solo los pixeles correspondientes los pulmones.
+El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1], la información de los pacientes fue debidamente eliminada de acuerdo con los protocolos de imágenes médicas. En las imágenes se muestran dos cortes de pacientes diferentes. La columna izquierda corresponde a una paciente normal mientras las imágenes a la derecha exhiben el patrón típico de la neumonía por Covid19: opacidades tipo vidrio esmerilado de predominio periférico. La primera fila muestra la imagen original, la segunda fila la máscara multiplicativa para la segmentación y la tercera fila muestra la imagen segmentada. La máscara se usa para la segmentación de manera de conservar solo los pixeles correspondientes los pulmones.
 
 
 <p align="center">
