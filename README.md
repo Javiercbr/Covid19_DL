@@ -24,7 +24,7 @@ El modelo se confeccionó con la API de Keras. La arquitectura consiste en una D
 
 # Entrenamiento
 
-El entrenamiento se realizó sobre un conjunto de alrededor de 700 cortes pertenecientes a 108 pacientes separados en conjuntos de entrenamiento, validación y testeo. Se mantuvo el balance entre casos normales y positivos (entre 48-53% en cada conjunto). Se utilizó un optimizador Adam con un learning rate adaptativo (valor inicial de 0.0001) y binary cross entropy como función de perdida. El algoritmo se entrenó en una GPU GeForce GTX 1650 Ti con early stopping al alcanzar una meseta en la pérdida medida para el conjunto de validación.
+El entrenamiento se realizó sobre un conjunto de alrededor de 700 <sup>[1](#myfootnote1)</sup> cortes pertenecientes a 108 pacientes separados en conjuntos de entrenamiento, validación y testeo. Se mantuvo el balance entre casos normales y positivos (entre 48-53% en cada conjunto). Se utilizó un optimizador Adam con un learning rate adaptativo (valor inicial de 0.0001) y binary cross entropy como función de perdida. El algoritmo se entrenó en una GPU GeForce GTX 1650 Ti con early stopping al alcanzar una meseta en la pérdida medida para el conjunto de validación.
 
 # Resultados
 
@@ -35,6 +35,8 @@ Se obtuvo una accuracy final de 0.923 (loss=0.227) una matriz de confusión con 
 </p>
 
 Para las TACs mostradas arriba (extraídas del conjunto de testeo) las probabilidades predichas son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo. 
+
+ <a name="myfootnote1">1</a>: La cantidad es insuficiente para asegurar los resultados pero se prevé aumentar los datos de entrenamiento.
 
 # Referencias
 
