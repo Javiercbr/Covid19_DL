@@ -53,19 +53,31 @@ Optimizer | Adam
 
 # Results
 
-Se obtuvo una accuracy final de 0.923 (loss=0.227) una matriz de confusión con VP=60, VN=60, FP=9 y FN=1 y un misclassification rate de 0.083. En la figura se muestra la curva ROC.
+The table shows the outcomes of the assesment on the testing set, figure shows the ROC curve.
+
+Metric | Value
+--- | --- 
+True positives | 401
+True negatives | 296
+False positives | 53
+False negatives | 2
+Accuracy | 0.92
+Loss | 0.19
+Misclassification rate |  0.07
+AUC | 0.9
+
 
 <p align="center">
   <img src="ROC.png" width="400" title="seg1">
 </p>
 
-Para las TACs mostradas arriba (extraídas del conjunto de testeo) las probabilidades predichas son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo. 
+<!-- Para las TACs mostradas arriba (extraídas del conjunto de testeo) las probabilidades predichas son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo. 
 
  <a name="myfootnote1">1</a>: La cantidad es insuficiente para asegurar los resultados pero se prevé aumentar los datos de entrenamiento.
  
  
- 
-# Further analysis 
+  -->
+# Further analysis using Gradcam
 
 <p align="center">
   
