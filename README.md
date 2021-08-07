@@ -81,14 +81,13 @@ AUC | 0.9
 # Further analysis using Gradcam
 
 
-The heatmap provides information on the regions of the CT that activate the neural network. Let's be the heatmap <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x}) }"> where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
+The heatmap provides information on the regions of the CT that activate the neural network [3]. Let's be the heatmap <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x}) }"> where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
 
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{A_l}  d\bf{x} h(\bf{x}) }">
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{A_l}  d\bf{x}\, h(\bf{x}) }">
  
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x} h(\bf{x}) }">
-where where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and where <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively.
-
-and provides information on the dominance of the lesions.
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}) }">
+ 
+where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> may help to asses if the pneumonia is left, right dominant or bilateral.
 <p align="center">
   
   <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
@@ -100,12 +99,19 @@ and provides information on the dominance of the lesions.
 
 </p> 
 
-Previo a la clasificación, se requiere una segmentación, se pueden encontrar varios repositorios con herramientas de segmentación eficientes, por ejemplo: https://github.com/JoHof/lungmask. 
+Segmentation of areas <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> can be accomplished using AI, there is an excelent tool in [4].
 
 # References
 [1] Afshar, P., Heidarian, S., Enshaei, N. et al. COVID-CT-MD, COVID-19 computed tomography scan dataset applicable in machine learning and deep learning. Sci Data 8, 121 (2021). https://doi.org/10.1038/s41597-021-00900-3
 
 [2] Pranav Rajpurkar ,Jeremy Irvin ,Robyn L. Ball,Kaylie Zhu et al. Deep learning for chest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists PLOS Medicine, November 2018.
 https://dx.plos.org/10.1371/journal.pmed.1002686
+
+[3] R. Selvaraju, M. Cogswell, A. Das, R. Vedantam, D. Parikh, D. Batra. Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization, International Journal of Computer Vision, Springer Nature 2019.
+
+[4] https://github.com/JoHof/lungmask
+
+
+[5] M. Roberts et al. Common pitfalls and recommendations for using machine learning to detect and prognosticate for COVID-19 using chest radiographs and CT scans, Nature Machine Intelligence, 2021.
 
 
