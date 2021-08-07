@@ -1,19 +1,23 @@
 # Deep Learning for COVID19 detection in CT images 
 
-Acá se presenta un resultado preliminar: una etapa básica de un pipeline mayor donde se identifican los cortes tomográficos que exhiben lesiones de Covid19. El objetivo final del pipeline, actualmente en desarrollo, es la cuantificación de la extensión de los distintos tipos de lesiones características de la neumonía por SARS-CoV-2 (Ground-glass opacification, pleural effusion, consolidation, etc.) mediante el uso de técnicas de segmentación.
+
+This is a classificator to detect signs of SARS-CoV-2 pneumonia in CT scans. This is the first step of a major pipeline, currently under development, intended to analyze the existence, distribution, and extension of the Covid19 characteristic lesions such as ground-glass opacification, pleural effusion, and consolidation.
+
 
 # Dataset
 
-El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1], la información de los pacientes fue debidamente eliminada de acuerdo con los protocolos de imágenes médicas. En las imágenes se muestran dos cortes de pacientes diferentes. La columna izquierda corresponde a una paciente normal mientras las imágenes a la derecha exhiben el patrón típico de la neumonía por Covid19: opacidades tipo vidrio esmerilado de predominio periférico. La primera fila muestra la imagen original, la segunda fila la máscara multiplicativa para la segmentación y la tercera fila muestra la imagen segmentada. La máscara se usa para la segmentación de manera de conservar solo los pixeles correspondientes los pulmones.
-
+The model was trained with labeled Covid19 and normal images from the data base in [1] after converting them to NIfTI format. The figure shows an example of a normal subject (left) and an infected subject exhibiting the typical ground-glass pattern.
 
 <p align="center">
-  
   <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
-  
-   
-
 </p>
+The table summarizes 
+
+Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+
+
 
 # Modelo
 
