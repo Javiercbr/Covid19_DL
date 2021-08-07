@@ -90,14 +90,18 @@ The heatmap provides information on the regions of the CT that activate the neur
 where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> may help to asses if the pneumonia is left, right dominant or bilateral.
 <p align="center">
   
-  <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
+  <img src="heat/izq.png" width="400" title="cruda1"> <img src="heat/der.png" width="400" title="seg1">
   
-  <img src="Crudas_png/IM0635_mascara.png" width="400" title="seg1"><img src="Crudas_png/IM0044_mascara.png" width="400" title="seg1">
+  <img src="heat/grad_cam_izq.png" width="400" title="seg1"><img src="heat/grad_cam_der.png" width="400" title="seg1">
   
-  <img src="IMG_prueba/Segmentadas_png/IM0635_seg.png" width="400" title="seg1"><img src="IMG_prueba/Segmentadas_png/IM0044_seg.png" width="400" title="seg1">
+  <img src="heat/mask_izq.png" width="400" title="seg1"><img src="heat/mask_der.png" width="400" title="seg1">
   
 
 </p> 
+
+
+Quantities are <img src="https://render.githubusercontent.com/render/math?math={ q_l=4375 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=805 }"> for the first column and
+<img src="https://render.githubusercontent.com/render/math?math={ q_l=643 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=4460 }"> for the second.
 
 Segmentation of areas <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> can be accomplished using AI, there is an excelent tool in [4].
 
@@ -110,7 +114,7 @@ This is just un example of how DL tools can be used to classify CT scans for fur
 [1] Afshar, P., Heidarian, S., Enshaei, N. et al. COVID-CT-MD, COVID-19 computed tomography scan dataset applicable in machine learning and deep learning. Sci Data 8, 121 (2021). https://doi.org/10.1038/s41597-021-00900-3
 
 [2] Pranav Rajpurkar ,Jeremy Irvin ,Robyn L. Ball,Kaylie Zhu et al. Deep learning for chest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists PLOS Medicine, November 2018.
-https://dx.plos.org/10.1371/journal.pmed.1002686
+https://dx.plos.org/10.1371/journal.pmed.1002686=
 
 [3] R. Selvaraju, M. Cogswell, A. Das, R. Vedantam, D. Parikh, D. Batra. Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization, International Journal of Computer Vision, Springer Nature 2019. https://doi.org/10.1007/s11263-019-01228-7
 
