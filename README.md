@@ -80,6 +80,15 @@ AUC | 0.9
   -->
 # Further analysis using Gradcam
 
+
+The heatmap provides information on the regions of the CT that activate the neural network. Let's be the heatmap <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x}) }"> where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
+
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{A_l}  d\bf{x} h(\bf{x}) }">
+ 
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x} h(\bf{x}) }">
+where where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and where <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively.
+
+and provides information on the dominance of the lesions.
 <p align="center">
   
   <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
