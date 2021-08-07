@@ -13,10 +13,13 @@ The model was trained with labeled Covid19 and normal images from the data base 
 </p>
 
 
-A total number of 108 subjects (54 positives for Covid19 and 54 normal) was employed. Each image is a slice of a CT volume containing approximately 200 slices. Images positives for Covid19 are labeled by experts as expalined in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in the figure.
+A total number of 108 subjects (54 positives for Covid19 and 54 normal) was employed. Each image is a slice of a CT volume containing approximately 200 slices. Images positives for Covid19 are labeled by experts as expalined in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in the figure where <img src="https://render.githubusercontent.com/render/math?math=z\in\[0, 1]"> is the normalized position of the slice, i.e. <img src="https://render.githubusercontent.com/render/math?math=z=0"> is the first slice and <img src="https://render.githubusercontent.com/render/math?math=z=1"> the last one.
+
+
+ 
 
 <p align="center">
-  <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
+  <img src="covid_dist.png" width="400" title="cruda1"> <img src="normal_dist.png" width="400" title="seg1">
 </p>
 
 
@@ -30,15 +33,25 @@ Validation | 1486| 48
 Test | 755| 53
 
 
-# Modelo
+# Model
 
-El modelo se confeccionó con la API de Keras. La arquitectura consiste en una DenseNet121 con una capa de salida con una activación sigmoidea y entrega la probabilidad de que la imagen sea positiva para Covid19. La arquitectura se inspiró en [2] donde se demostró la eficacia de estas configuraciones para la clasificación multiclase, i.e. varias patologías, de radiografías de tórax. Previo a la clasificación, se requiere una segmentación, se pueden encontrar varios repositorios con herramientas de segmentación eficientes, por ejemplo: https://github.com/JoHof/lungmask. 
+The model was developped using Keras/Tensorflow.
+Architecture: DenseNet121 with a sigmoid activation layer that represents the probability of being positive for Covid19. This configuration is inspired in [2] where it was shown to be efficient for X-ray classification.
 
-# Entrenamiento
+# Training
 
-El entrenamiento se realizó sobre un conjunto de alrededor de 700 <sup>[1](#myfootnote1)</sup> cortes pertenecientes a 108 pacientes separados en conjuntos de entrenamiento, validación y testeo. Se mantuvo el balance entre casos normales y positivos (entre 48-53% en cada conjunto). Se utilizó un optimizador Adam con un learning rate adaptativo (valor inicial de 0.0001) y binary cross entropy como función de perdida. El algoritmo se entrenó en una GPU GeForce GTX 1650 Ti con early stopping al alcanzar una meseta en la pérdida medida para el conjunto de validación.
+The model was trained with a GeForce GTX 1650 Ti GPU. A validation set was used to monitor the progress of the training, for instance the leraning rate was adapted when the accuracy on the validation set platoed. 
 
-# Resultados
+ 
+Setting | Value
+--- | --- 
+Loss function | binary crossentropy
+Epochs | 20
+Learning rate | 0.00005 (adaptive)
+Optimizer | Adam
+ 
+
+# Results
 
 Se obtuvo una accuracy final de 0.923 (loss=0.227) una matriz de confusión con VP=60, VN=60, FP=9 y FN=1 y un misclassification rate de 0.083. En la figura se muestra la curva ROC.
 
@@ -65,8 +78,9 @@ Para las TACs mostradas arriba (extraídas del conjunto de testeo) las probabili
 
 </p> 
 
-# Referencias
+Previo a la clasificación, se requiere una segmentación, se pueden encontrar varios repositorios con herramientas de segmentación eficientes, por ejemplo: https://github.com/JoHof/lungmask. 
 
+# References
 [1] Afshar, P., Heidarian, S., Enshaei, N. et al. COVID-CT-MD, COVID-19 computed tomography scan dataset applicable in machine learning and deep learning. Sci Data 8, 121 (2021). https://doi.org/10.1038/s41597-021-00900-3
 
 [2] Pranav Rajpurkar ,Jeremy Irvin ,Robyn L. Ball,Kaylie Zhu et al. Deep learning for chest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists PLOS Medicine, November 2018.
