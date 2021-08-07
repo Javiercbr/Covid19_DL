@@ -11,12 +11,23 @@ The model was trained with labeled Covid19 and normal images from the data base 
 <p align="center">
   <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
 </p>
-The table summarizes 
 
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
 
+A total number of 108 subjects (54 positives for Covid19 and 54 normal) was employed. Each image is a slice of a CT volume containing approximately 200 slices. Images positives for Covid19 are labeled by experts as expalined in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in the figure.
+
+<p align="center">
+  <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
+</p>
+
+
+
+The table summarizes the distridution of samples in each dataset. 
+
+Set| Number of samples | % of Covid19 positives
+--- | --- | ---
+Training | 5318| 50
+Validation | 1486| 48
+Test | 755| 53
 
 
 # Modelo
