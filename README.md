@@ -1,43 +1,122 @@
-# Algoritmos Deep Learning para el estudio de Covid19 en imágenes de TAC de tórax. 
+# Deep Learning for COVID19 detection in CT images 
 
-Acá se presenta un resultado preliminar: una etapa básica de un pipeline mayor donde se identifican los cortes tomográficos que exhiben lesiones de Covid19. El objetivo final del pipeline, actualmente en desarrollo, es la cuantificación de la extensión de los distintos tipos de lesiones características de la neumonía por SARS-CoV-2 (Ground-glass opacification, pleural effusion, consolidation, etc.) mediante el uso de técnicas de segmentación.
+
+This is a classificator to detect signs of SARS-CoV-2 pneumonia in CT scans. This is the first step of a major pipeline, currently under development, intended to analyze the existence, distribution, and extension of the Covid19 characteristic lesions such as ground-glass opacification, pleural effusion, and consolidation.
+
 
 # Dataset
 
-El modelo fue entrenado con cortes tomográficos axiales extraídos de la base de datos [1], la información de los pacientes fue debidamente eliminada de acuerdo con los protocolos de imágenes médicas. En las imágenes se muestran dos cortes de pacientes diferentes. La columna izquierda corresponde a una paciente normal mientras las imágenes a la derecha exhiben el patrón típico de la neumonía por Covid19: opacidades tipo vidrio esmerilado de predominio periférico. La primera fila muestra la imagen original, la segunda fila la imagen segmentada y la tercera muestra la máscara multiplicativa. Esta última se usa para la segmentación de manera de conservar solo los pixeles correspondientes los pulmones.
-
+The model was trained with labeled Covid19 and normal images from the data base in [1] after converting them to NIfTI format. The figure shows an example of a normal subject (left) and an infected subject exhibiting the typical ground-glass pattern.
 
 <p align="center">
   <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
-  <img src="IMG_prueba/Segmentadas_png/IM0635_seg.png" width="400" title="seg1"><img src="IMG_prueba/Segmentadas_png/IM0044_seg.png" width="400" title="seg1">
-  <img src="Crudas_png/IM0635_mascara.png" width="400" title="seg1"><img src="Crudas_png/IM0044_mascara.png" width="400" title="seg1">
-  
-
 </p>
 
-# Modelo
 
-El modelo se confeccionó con la API de Keras. La arquitectura consiste en una DenseNet121 con una capa de salida con una activación sigmoidea y entrega la probabilidad de que la imagen sea positiva para Covid19. La arquitectura se inspiró en [2] donde se demostró la eficacia de estas configuraciones para la clasificación multiclase, i.e. varias patologías, de radiografías de tórax. Previo a la clasificación, se requiere una segmentación, se pueden encontrar varios repositorios con herramientas de segmentación eficientes, por ejemplo: https://github.com/JoHof/lungmask. 
+A total number of 108 subjects (54 positives for Covid19 and 54 normal) was employed. Each image is a slice of a CT volume containing approximately 200 slices. Images positives for Covid19 are labeled by experts as expalined in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in the figure where <img src="https://render.githubusercontent.com/render/math?math=z\in\[0, 1]"> is the normalized position of the slice, i.e. <img src="https://render.githubusercontent.com/render/math?math=z=0"> is the first slice and <img src="https://render.githubusercontent.com/render/math?math=z=1"> the last one.
 
-# Entrenamiento
 
-El entrenamiento se realizó sobre un conjunto de alrededor de 700 cortes pertenecientes a 108 pacientes separados en conjuntos de entrenamiento, validación y testeo. Se mantuvo el balance entre casos normales y positivos (entre 48-53% en cada conjunto). Se utilizó un optimizador Adam con un learning rate adaptativo (valor inicial de 0.0001) y binary cross entropy como función de perdida. El algoritmo se entrenó en una GPU GeForce GTX 1650 Ti con early stopping al alcanzar una meseta en la pérdida medida para el conjunto de validación.
+ 
 
-# Resultados
+<p align="center">
+  <img src="covid_dist.png" width="400" title="cruda1"> <img src="normal_dist.png" width="400" title="seg1">
+</p>
 
-Se obtuvo una accuracy final de 0.923 (loss=0.227) una matriz de confusión con VP=60, VN=60, FP=9 y FN=1 y un misclassification rate de 0.083. En la figura se muestra la curva ROC.
+
+
+The table summarizes the distridution of samples in each dataset. 
+
+Set| Number of samples | % of Covid19 positives
+--- | --- | ---
+Training | 5318| 50
+Validation | 1486| 48
+Test | 755| 53
+
+
+# Model
+
+The model was developped using Keras/Tensorflow.
+Architecture: DenseNet121 with a sigmoid activation layer that represents the probability of being positive for Covid19. This configuration is inspired in [2] where it was shown to be efficient for X-ray classification.
+
+# Training
+
+The model was trained with a GeForce GTX 1650 Ti GPU. A validation set was used to monitor the progress of the training, for instance the leraning rate was adapted when the accuracy on the validation set platoed. 
+
+ 
+Setting | Value
+--- | --- 
+Loss function | binary crossentropy
+Epochs | 20
+Learning rate | 0.00005 (adaptive)
+Optimizer | Adam
+ 
+
+# Results
+
+
+The table shows the outcomes of the assesment on the testing set, figure shows the ROC curve.
+
+Metric | Value
+--- | --- 
+True positives | 401
+True negatives | 296
+False positives | 53
+False negatives | 2
+Accuracy | 0.92
+Loss | 0.19
+Misclassification rate |  0.07
+AUC | 0.9
+
 
 <p align="center">
   <img src="ROC.png" width="400" title="seg1">
 </p>
 
-Para las TACs mostradas arriba (extraídas del conjunto de testeo) las probabilidades predichas son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo. 
+<!-- Para las TACs mostradas arriba (extraídas del conjunto de testeo) las probabilidades predichas son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo. 
 
-# Referencias
+ <a name="myfootnote1">1</a>: La cantidad es insuficiente para asegurar los resultados pero se prevé aumentar los datos de entrenamiento.
+ 
+ 
+  -->
+# Further analysis using Gradcam
 
+
+The heatmap provides information on the regions of the CT that activate the neural network [3]. Let's be the heatmap <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x}) }"> where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
+
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{A_l}  d\bf{x}\, h(\bf{x}) }">
+ 
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}) }">
+ 
+where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> may help to asses if the pneumonia is left, right dominant or bilateral.
+<p align="center">
+  
+  <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
+  
+  <img src="Crudas_png/IM0635_mascara.png" width="400" title="seg1"><img src="Crudas_png/IM0044_mascara.png" width="400" title="seg1">
+  
+  <img src="IMG_prueba/Segmentadas_png/IM0635_seg.png" width="400" title="seg1"><img src="IMG_prueba/Segmentadas_png/IM0044_seg.png" width="400" title="seg1">
+  
+
+</p> 
+
+Segmentation of areas <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> can be accomplished using AI, there is an excelent tool in [4].
+
+
+# Remarks
+
+This is just un example of how DL tools can be used to classify CT scans for further analysis. It´s not a diagnosis tool. Some of the issues that are necessary to address for developing a suitable tool for diagnosis are discused in [5].
+
+# References
 [1] Afshar, P., Heidarian, S., Enshaei, N. et al. COVID-CT-MD, COVID-19 computed tomography scan dataset applicable in machine learning and deep learning. Sci Data 8, 121 (2021). https://doi.org/10.1038/s41597-021-00900-3
 
 [2] Pranav Rajpurkar ,Jeremy Irvin ,Robyn L. Ball,Kaylie Zhu et al. Deep learning for chest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists PLOS Medicine, November 2018.
 https://dx.plos.org/10.1371/journal.pmed.1002686
+
+[3] R. Selvaraju, M. Cogswell, A. Das, R. Vedantam, D. Parikh, D. Batra. Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization, International Journal of Computer Vision, Springer Nature 2019. https://doi.org/10.1007/s11263-019-01228-7
+
+[4] https://github.com/JoHof/lungmask
+
+
+[5] M. Roberts et al. Common pitfalls and recommendations for using machine learning to detect and prognosticate for COVID-19 using chest radiographs and CT scans, Nature Machine Intelligence, 2021. https://doi.org/10.1038/s42256-021-00307-0
 
 
