@@ -13,7 +13,7 @@ The model was trained with labeled Covid19 and normal images from the database i
 </p>
 
 
-A total number of 108 subjects was included (54 normal and 54 Covid19). Each image is a slice of a CT volume that consisits of approximately 200 slices. Images positives for Covid19 were labeled by experts as expalined in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in next figure where <img src="https://render.githubusercontent.com/render/math?math=z\in\[0, 1]"> is the normalized position of the slice, i.e. <img src="https://render.githubusercontent.com/render/math?math=z=0"> is the first slice and <img src="https://render.githubusercontent.com/render/math?math=z=1"> the last one.
+A total number of 108 subjects was included (54 normal and 54 Covid19). Each image is a slice of a CT volume that consists of approximately 200 slices. Images positives for Covid19 were labeled by experts as explained in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in next figure where <img src="https://render.githubusercontent.com/render/math?math=z\in\[0, 1]"> is the normalized position of the slice, i.e. <img src="https://render.githubusercontent.com/render/math?math=z=0"> is the first slice and <img src="https://render.githubusercontent.com/render/math?math=z=1"> the last one.
 
 
  
@@ -24,7 +24,7 @@ A total number of 108 subjects was included (54 normal and 54 Covid19). Each ima
 
 
 
-Covid19 slices exhibit a normal distribution whereas normal slices are uniformly distributed. The table summarizes the distridution of samples in each dataset. There is no patient overlap among sets. 
+Covid19 slices exhibit a normal distribution whereas normal slices are uniformly distributed. The table summarizes the distribution of samples in each dataset. There is no patient overlap among sets. 
 
 Set| Number of samples | Covid19 [%]
 --- | --- | ---
@@ -35,13 +35,12 @@ Test | 755| 53
 
 # Model
 
-The model was developped in Keras/Tensorflow.
-Architecture: DenseNet121 with a sigmoid activation layer that represents the probability of being positive for Covid19. The configuration was inspired in [2] where it was shown to be efficient for X-ray classification. The final model had more than seven millon of trainable parameters. 
+The model was developed in Keras/Tensorflow.
+Architecture: DenseNet121 with a sigmoid activation layer that represents the probability of being positive for Covid19. The configuration was inspired in [2] where it was shown to be efficient for X-ray classification. The final model had more than seven million of trainable parameters. 
 
 # Training
 
-The model was trained on a NVIDIA GeForce GTX 1650 Ti GPU. A validation set was used to monitor the progress of the training, for instance the leraning rate was adapted when the accuracy on the validation set platoed. 
-
+The model was trained on a NVIDIA GeForce GTX 1650 Ti GPU. A validation set was used to monitor the progress of the training, for instance the learning rate was adapted when the accuracy on the validation set plateaued.
  
 Setting | Value
 --- | --- 
@@ -54,7 +53,7 @@ Optimizer | Adam
 # Results
 
 
-The table shows the outcomes of the assesment on the testing set, figure shows the ROC curve.
+The table shows the outcomes of the assessment on the testing set, figure shows the ROC curve.
 
 Metric | Value
 --- | --- 
@@ -80,7 +79,7 @@ AUC | 0.99
   -->
 # Heatmaps
 
-Heatmaps provide information on the regions of the image that activate the neural network [3]. Figure shows two Covid19 positive scans (row 1) and their respective heatmaps (row 2). While in the first case the committement of the lung is left dominant in the other case it is right dominant.
+Heatmaps provide information on the regions of the image that activate the neural network [3]. Figure shows two Covid19 positive scans (row 1) and their respective heatmaps (row 2). While in the first case the commitment of the lung is left dominant in the other case it is right dominant.
 
 <p align="center">
   
@@ -104,7 +103,7 @@ where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> 
 
 # Remarks
 
-This is just un example of how DL tools can be used to classify CT scans for further analysis. It´s not a diagnosis tool. Some of the issues that are necessary to address for developing a suitable tool for diagnosis are discused in [5].
+This is just an example of how DL tools can be used to classify CT scans for further analysis. It´s not a diagnosis tool. Some of the issues that are necessary to address for developing a suitable tool for diagnosis are discussed in [5].
 
 # References
 [1] Afshar, P., Heidarian, S., Enshaei, N. et al. COVID-CT-MD, COVID-19 computed tomography scan dataset applicable in machine learning and deep learning. Sci Data 8, 121 (2021). https://doi.org/10.1038/s41597-021-00900-3
