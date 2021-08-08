@@ -50,7 +50,7 @@ Learning rate | 0.00005 (adaptive)
 Optimizer | Adam
  
 
-# Results
+# Performance
 
 
 The table shows the outcomes of the assessment on the testing set, figure shows the ROC curve.
