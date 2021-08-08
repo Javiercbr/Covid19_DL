@@ -1,19 +1,19 @@
 # Deep Learning for COVID19 detection in CT images 
 
 
-This is a classificator to detect signs of SARS-CoV-2 pneumonia in CT scans. This is the first step of a major pipeline, currently under development, intended to analyze the existence, distribution, and extension of the Covid19 characteristic lesions such as ground-glass opacification, pleural effusion, and consolidation.
+This is a classificator to detect signs of SARS-CoV-2 pneumonia in CT scans. It is the first step of a major pipeline, currently under development, intended to analyze the existence, distribution, and extension of the typical radiological findings of Covid19 such as ground-glass opacification, pleural effusion, and consolidation.
 
 
 # Dataset
 
-The model was trained with labeled Covid19 and normal images from the data base in [1] after converting them to NIfTI format. The figure shows an example of a normal subject (left) and an infected subject exhibiting the typical ground-glass pattern.
+The model was trained with labeled Covid19 and normal images from the database in [1] after converting them to NIfTI format. The figure shows an example of a normal subject (left) and an infected subject exhibiting the typical ground-glass pattern (right).
 
 <p align="center">
   <img src="Crudas_png/IM0635_cruda.png" width="400" title="cruda1"> <img src="Crudas_png/IM0044_cruda.png" width="400" title="seg1">
 </p>
 
 
-A total number of 108 subjects (54 positives for Covid19 and 54 normal) was employed. Each image is a slice of a CT volume containing approximately 200 slices. Images positives for Covid19 are labeled by experts as expalined in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in the figure where <img src="https://render.githubusercontent.com/render/math?math=z\in\[0, 1]"> is the normalized position of the slice, i.e. <img src="https://render.githubusercontent.com/render/math?math=z=0"> is the first slice and <img src="https://render.githubusercontent.com/render/math?math=z=1"> the last one.
+A total number of 108 subjects was included (54 normal and 54 Covid19). Each image is a slice of a CT volume that consisits of approximately 200 slices. Images positives for Covid19 were labeled by experts as expalined in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in next figure where <img src="https://render.githubusercontent.com/render/math?math=z\in\[0, 1]"> is the normalized position of the slice, i.e. <img src="https://render.githubusercontent.com/render/math?math=z=0"> is the first slice and <img src="https://render.githubusercontent.com/render/math?math=z=1"> the last one.
 
 
  
@@ -24,9 +24,9 @@ A total number of 108 subjects (54 positives for Covid19 and 54 normal) was empl
 
 
 
-The table summarizes the distridution of samples in each dataset. 
+Covid19 slices exhibit a normal distribution whereas normal slices are uniformly distributed. The table summarizes the distridution of samples in each dataset. 
 
-Set| Number of samples | % of Covid19 positives
+Set| Number of samples | Covid19 [%]
 --- | --- | ---
 Training | 5318| 50
 Validation | 1486| 48
@@ -35,12 +35,12 @@ Test | 755| 53
 
 # Model
 
-The model was developped using Keras/Tensorflow.
-Architecture: DenseNet121 with a sigmoid activation layer that represents the probability of being positive for Covid19. This configuration is inspired in [2] where it was shown to be efficient for X-ray classification.
+The model was developped in Keras/Tensorflow.
+Architecture: DenseNet121 with a sigmoid activation layer that represents the probability of being positive for Covid19. The configuration was inspired in [2] where it was shown to be efficient for X-ray classification. The final model had more than seven millon of trainable parameters. 
 
 # Training
 
-The model was trained with a GeForce GTX 1650 Ti GPU. A validation set was used to monitor the progress of the training, for instance the leraning rate was adapted when the accuracy on the validation set platoed. 
+The model was trained on a NVIDIA GeForce GTX 1650 Ti GPU. A validation set was used to monitor the progress of the training, for instance the leraning rate was adapted when the accuracy on the validation set platoed. 
 
  
 Setting | Value
@@ -58,14 +58,14 @@ The table shows the outcomes of the assesment on the testing set, figure shows t
 
 Metric | Value
 --- | --- 
-True positives | 401
-True negatives | 296
-False positives | 53
-False negatives | 2
-Accuracy | 0.92
-Loss | 0.19
-Misclassification rate |  0.07
-AUC | 0.9
+True positives | 395
+True negatives | 333
+False positives | 7
+False negatives | 17
+Accuracy | 0.96
+Loss | 0.09
+Misclassification rate |  0.04
+AUC | 0.99
 
 
 <p align="center">
