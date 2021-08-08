@@ -69,7 +69,7 @@ AUC | 0.99
 
 
 <p align="center">
-  <img src="ROC.png" width="400" title="seg1">
+  <img src="ROC.png" width="400" title="seg1"><img src="PR.png" width="280" title="seg1">
 </p>
 
 <!-- Para las TACs mostradas arriba (extraídas del conjunto de testeo) las probabilidades predichas son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo. 
@@ -78,10 +78,9 @@ AUC | 0.99
  
  
   -->
-# Further analysis using Gradcam
+# Heatmaps
 
-
-The heatmap provides information on the regions of the CT that activate the neural network [3]. Let's be the heatmap <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x}) }"> where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Figure shows two positive scans (row 1) and their respective heatmaps (row 2). While in the first case the committement of the lung is either left dominant in the other case it is right dominant.
+Heatmaps provide information on the regions of the image that activate the neural network [3]. Figure shows two Covid19 positive scans (row 1) and their respective heatmaps (row 2). While in the first case the committement of the lung is left dominant in the other case it is right dominant.
 
 <p align="center">
   
@@ -94,15 +93,14 @@ The heatmap provides information on the regions of the CT that activate the neur
 
 </p> 
 
-Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
+ Let <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x}) }"> be the heatmap where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
 
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{A_l}  d\bf{x}\, h(\bf{x}) }">
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{A_l}  d\bf{x}\, h(\bf{x}), }">
  
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}) }">
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}), }">
  
-where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively. In this case values are <img src="https://render.githubusercontent.com/render/math?math={ q_l=4375 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=805 }"> for the first column and
-<img src="https://render.githubusercontent.com/render/math?math={ q_l=643 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=4460 }"> for the second. Values were calculated by element wise product between the heatmap and the masks for left and right lungs (row 3) obtained using ther AI-based tool for lung segmentation in [4].
-
+where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively. These integrals can be numerically calculated using masks for left and right lungs (row 3) obtained using the AI-based tool for lung segmentation in [4]. For the images shown, values are: <img src="https://render.githubusercontent.com/render/math?math={ q_l=4375 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=805 }"> for the first column (left dominant) and
+<img src="https://render.githubusercontent.com/render/math?math={ q_l=643 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=4460 }"> for the second (right dominant). 
 
 # Remarks
 
