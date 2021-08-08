@@ -81,13 +81,8 @@ AUC | 0.9
 # Further analysis using Gradcam
 
 
-The heatmap provides information on the regions of the CT that activate the neural network [3]. Let's be the heatmap <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x}) }"> where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
+The heatmap provides information on the regions of the CT that activate the neural network [3]. Let's be the heatmap <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x}) }"> where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Figure shows two positive scans (row 1) and their respective heatmaps (row 2). While in the first case the committement of the lung is either left dominant in the other case it is right dominant.
 
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{A_l}  d\bf{x}\, h(\bf{x}) }">
- 
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}) }">
- 
-where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> may help to asses if the pneumonia is left, right dominant or bilateral.
 <p align="center">
   
   <img src="heat/izq.png" width="400" title="cruda1"> <img src="heat/der.png" width="400" title="seg1">
@@ -99,11 +94,14 @@ where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> 
 
 </p> 
 
+Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
 
-Quantities are <img src="https://render.githubusercontent.com/render/math?math={ q_l=4375 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=805 }"> for the first column and
-<img src="https://render.githubusercontent.com/render/math?math={ q_l=643 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=4460 }"> for the second.
-
-Segmentation of areas <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> can be accomplished using AI, there is an excelent tool in [4].
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{A_l}  d\bf{x}\, h(\bf{x}) }">
+ 
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}) }">
+ 
+where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively. In this case values are <img src="https://render.githubusercontent.com/render/math?math={ q_l=4375 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=805 }"> for the first column and
+<img src="https://render.githubusercontent.com/render/math?math={ q_l=643 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=4460 }"> for the second. Values were calculated by element wise product between the heatmap and the masks for left and right lungs (row 3) obtained using ther AI-based tool for lung segmentation in [4].
 
 
 # Remarks
