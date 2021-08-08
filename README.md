@@ -1,7 +1,7 @@
 # Deep Learning for COVID19 detection in CT images 
 
 
-This is a classificator to detect signs of SARS-CoV-2 pneumonia in CT scans. It is the first step of a major pipeline, currently under development, intended to analyze the existence, distribution, and extension of the typical radiological findings of Covid19 such as ground-glass opacification, pleural effusion, and consolidation.
+This is a classificator to detect signs of SARS-CoV-2 pneumonia in chest CT scans. It is the first step of a major pipeline, currently under development, intended to analyze the existence, distribution, and extension of the typical radiological findings of Covid19 such as ground-glass opacification, pleural effusion, and consolidation.
 
 
 # Dataset
