@@ -79,7 +79,7 @@ AUC | 0.99
   -->
 # Heatmaps
 
-Heatmaps provide information on the regions of the image that activate the neural network [3]. Figure shows two Covid19 positive scans (row 1) and their respective heatmaps (row 2). While in the first case the commitment of the lung is left dominant in the other case it is right dominant.
+Heatmaps provide information on the regions of the image that activate the neural network [3]. Figure shows two Covid19 positive scans (row 1) and their respective heatmaps (row 2). While in the first case the involvement of the lung is left dominant, in the other case the right lung seems to be more affected.
 
 <p align="center">
   
