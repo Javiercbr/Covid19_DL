@@ -1,49 +1,69 @@
 from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 import matplotlib.pyplot as plt
+import SimpleITK as sitk
+# from lungmask import mask
+import cv2
 
 
 
 
-def acondicionar_imagen(image_dir,  target_w = 256, target_h = 256):
-
-    # normalize images
-    image_generator = ImageDataGenerator(
-        samplewise_center=True,
-        samplewise_std_normalization= True)
-    
-    # flow from directory with specified batch size
-    # and target image size
-    generator = image_generator.flow_from_directory(image_dir, target_size=(256, 256)) 
+def load_image_nii(img, image_dir, H=256, W=256):
     
  
+    
+    img_path = image_dir + '\\' + img
+     
+   
+    
+    image       = sitk.ReadImage(img_path)
 
-    return generator
+    image_arr   = sitk.GetArrayFromImage(image )
+    image_arr   = cv2.resize(image_arr[0,:,:] , dsize=(H,W ),interpolation=cv2.INTER_NEAREST)
+    image_arr   = np.stack( (image_arr,image_arr,image_arr), 2)
+    image_arr   = np.expand_dims(image_arr, axis=0)
+     
+    return  image_arr 
 
+
+ 
 
 
 modeloCovid = load_model('modeloCovid.h5')
 IMAGE_DIR = ".\IMG_prueba"
-preprocessed_input =  acondicionar_imagen(IMAGE_DIR)
-preds = modeloCovid.predict(preprocessed_input)
+
+
+X = load_image_nii('IM2048_cruda.nii', IMAGE_DIR)
+
+pred = modeloCovid.predict(X)
+
+
+print("Porbability: ", pred)
 
 
 
-print("Las probabilidades de que sea positivo para Covid19 son: ")
-print(preds[:,0])
+X = X[0]
+X = (X-X.min())/(X.max()-X.min())
+plt.imshow(X)
+plt.title('Probability: P= {}'.format(pred[0])) 
+plt.show()
+ 
 
-x = preprocessed_input.__getitem__(0)
-x=np.asarray(x[0])
+X = load_image_nii('IM6508_cruda.nii', IMAGE_DIR)
+
+pred = modeloCovid.predict(X)
 
 
-for i in range(len(preds)):
+print("Porbability: ", pred)
 
-    x0 = x[i]
-    x0 = x0[:,:,0]
-    f = plt.figure(i) 	
-    plt.imshow(x0, cmap="gray", origin="upper")
-    plt.title("Probabilidad de positivo: "+ str(preds[i,0]))
-    f.show()
 
+
+X = X[0]
+X = (X-X.min())/(X.max()-X.min())
+plt.imshow(X)
+plt.title('Probability: P= {}'.format(pred[0])) 
+plt.show()
+ 
+
+ 
 input() 
