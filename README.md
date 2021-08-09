@@ -98,8 +98,8 @@ Heatmaps provide information on the regions of the image that activate the neura
  
  <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}), }">
  
-where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively. These integrals can be numerically calculated using masks for left and right lungs (row 3) obtained using the AI-based tool for lung segmentation in [4]. For the images shown, values are: <img src="https://render.githubusercontent.com/render/math?math={ q_l=4375 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=805 }"> for the first column (left dominant) and
-<img src="https://render.githubusercontent.com/render/math?math={ q_l=643 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=4460 }"> for the second (right dominant). 
+where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> are the areas of left and right lung respectively. These integrals can be numerically calculated using masks for left and right lungs (row 3) obtained using the AI-based tool for lung segmentation in [4]. For the images shown, values are: <img src="https://render.githubusercontent.com/render/math?math={ q_l= 327 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=60 }"> for the first column (left dominant) and
+<img src="https://render.githubusercontent.com/render/math?math={ q_l=48 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=333 }"> for the second (right dominant). 
 
 # Remarks
 
