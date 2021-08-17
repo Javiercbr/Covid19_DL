@@ -57,13 +57,13 @@ The table shows the outcomes of the assessment on the testing set, figure shows 
 
 Metric | Value
 --- | --- 
-True positives | 395
-True negatives | 333
-False positives | 7
-False negatives | 17
-Accuracy | 0.96
-Loss | 0.09
-Misclassification rate |  0.04
+True positives | 399
+True negatives | 284
+False positives | 4
+False negatives | 65
+Accuracy | 0.91
+Loss | 0.21
+Misclassification rate |  0.09
 AUC | 0.99
 
 
