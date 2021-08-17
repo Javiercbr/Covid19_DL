@@ -4,6 +4,7 @@
 This is a classificator to detect signs of SARS-CoV-2 pneumonia in chest CT scans. It is the first step of a major pipeline, currently under development, intended to analyze the existence, distribution, and extension of the typical radiological findings of Covid19 such as ground-glass opacification, pleural effusion, and consolidation.
 
 
+
 # Dataset
 
 The model was trained with labeled Covid19 and normal images from the database in [1] after converting them to NIfTI format. The figure shows an example of a normal subject (left) and an infected subject exhibiting the typical ground-glass pattern (right).
@@ -68,7 +69,7 @@ AUC | 0.99
 
 
 <p align="center">
-  <img src="ROC.png" width="400" title="seg1"><img src="PR.png" width="280" title="seg1">
+  <img src="ROC.png" width="400" title="seg1"><img src="PR.png" width="400" title="seg1">
 </p>
 
 <!-- Para las TACs mostradas arriba (extraídas del conjunto de testeo) las probabilidades predichas son P=0.9993 para el caso positivo y P=0.0260 para el caso negativo. 
