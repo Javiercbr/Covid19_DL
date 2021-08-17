@@ -94,11 +94,13 @@ Heatmaps provide information on the regions of the image that activate the neura
 
  Let <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x}) }"> be the heatmap where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
 
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{A_l}  d\bf{x}\, h(\bf{x}), }">
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_l}(\bf{x}) , }">
  
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}), }">
+ <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_r}(\bf{x}) , }">
  
-where <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> denote the support of the left and right lungs respectively. These integrals can be numerically calculated using masks for left and right lungs (row 3) obtained using the AI-based tool for lung segmentation in [4]. For the images shown, values are: <img src="https://render.githubusercontent.com/render/math?math={ q_l= 327 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=60 }"> for the first column (left dominant) and
+<!--  <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}), }"> -->
+ 
+where <img src="https://render.githubusercontent.com/render/math?math={\mathbb{1}(\bf{x})}"> is the indicator function, <img src="https://render.githubusercontent.com/render/math?math={ A_l }"> and <img src="https://render.githubusercontent.com/render/math?math={A_r} "> denote the support of the left and right lungs respectively. These integrals can be numerically calculated using masks for left and right lungs (row 3) obtained using the AI-based tool for lung segmentation in [4]. For the images shown, values are: <img src="https://render.githubusercontent.com/render/math?math={ q_l= 327 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=60 }"> for the first column (left dominant) and
 <img src="https://render.githubusercontent.com/render/math?math={ q_l=48 }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r=333 }"> for the second (right dominant). 
 
 # Remarks
