@@ -121,5 +121,8 @@ https://dx.plos.org/10.1371/journal.pmed.1002686=
 
 [5] M. Roberts et al. Common pitfalls and recommendations for using machine learning to detect and prognosticate for COVID-19 using chest radiographs and CT scans, Nature Machine Intelligence, 2021. https://doi.org/10.1038/s42256-021-00307-0
 
+[6] M. Ledesma, J. Cebeiro, M. Morvidone, AI-based descriptors of the distribution of SARS-CoV-2 in chest CT-scans, CONGRESO ARGENTINO DE BIOINGENIERÍA 
+Y XII JORNADAS DE INGENIERÍA CLÍNICA, SAN JUAN, ARGENTINA, SEPTIEMBRE DE 2022
+
 
 
