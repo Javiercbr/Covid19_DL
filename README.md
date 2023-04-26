@@ -106,7 +106,7 @@ where <img src="https://render.githubusercontent.com/render/math?math={\mathbb{1
 
 # Remarks
 
-This is just an example of how DL tools can be used to classify CT scans for further analysis. It´s not a diagnosis tool. Some of the issues that are necessary to address for developing a suitable tool for diagnosis are discussed in [5]. See [6] for detailed information on the application of this AI tool. 
+This is just an example of how DL tools can be used to classify CT scans for further analysis. It´s not a diagnosis tool. Some of the issues that are necessary to address for developing a suitable tool for diagnosis are discussed in [5]. For detailed information on the applications of this AI tool see [6] (spanish paper included in this repository). 
 
 # References
 [1] Afshar, P., Heidarian, S., Enshaei, N. et al. COVID-CT-MD, COVID-19 computed tomography scan dataset applicable in machine learning and deep learning. Sci Data 8, 121 (2021). https://doi.org/10.1038/s41597-021-00900-3
