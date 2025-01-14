@@ -93,7 +93,7 @@ Heatmaps provide information on the regions of the image that activate the neura
 
 </p> 
 
-![E = mc^2](https://latex.codecogs.com/png.latex?E%20%3D%20mc%5E2)
+![ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}),](https://latex.codecogs.com/png.latex?E%20%3D%20mc%5E2)
 
  Let <img src="https://render.githubusercontent.com/render/math?math={ h(\bf{x})\geq 0 }"> be the heatmap where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
 
