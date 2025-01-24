@@ -93,7 +93,7 @@ Heatmaps provide information on the regions of the image that activate the neura
 
 </p> 
 
-$$\Huge q_r = \int_{A_r} d\bf{x}  h(\bf{x})$$
+$$\Huge q_r = \int_{A_r} d\bf{x}  h(\mathbf{x})$$
 
 
 
