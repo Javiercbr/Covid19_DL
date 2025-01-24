@@ -99,7 +99,7 @@ Heatmaps provide information on the regions of the image that activate the neura
 
 
 
-Let <img src="https://latex.codecogs.com/png.latex?h(\mathbf{x})\geq%200" /> be the heatmap where <img src="https://latex.codecogs.com/png.latex?\mathbb{R}^2" />. Quantities $q_l$ and $q_r$ are defined as
+Let <img src="https://latex.codecogs.com/png.latex?h(\mathbf{x})\geq%200" /> be the heatmap where $\mathbb{R}^2$. Quantities $q_l$ and $q_r$ are defined as
 
 <p align="center">
   <img src="q_l_r.png" width="400" title="qlr">
