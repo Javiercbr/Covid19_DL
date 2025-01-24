@@ -93,15 +93,11 @@ Heatmaps provide information on the regions of the image that activate the neura
 
 </p> 
 
-$$\Huge q_r = \int_{A_r} d\bf{x}  h(\mathbf{x})$$
-
-
-
- Let <img src="https://latex.codecogs.com/png.latex?h(\bf{x})\geq 0" /> be the heatmap where <img src="https://latex.codecogs.com/png.latex?\bf{x}\in \mathbb{R}^2" />. Quantities <img src="https://latex.codecogs.com/png.latex?q_l" /> and <img src="https://latex.codecogs.com/png.latex?q_r" /> are defined as
+Let <img src="https://latex.codecogs.com/png.latex?h(\bf{x})\geq 0" /> be the heatmap where <img src="https://latex.codecogs.com/png.latex?\bf{x}\in \mathbb{R}^2" />. Quantities <img src="https://latex.codecogs.com/png.latex?q_l" /> and <img src="https://latex.codecogs.com/png.latex?q_r" /> are defined as
 
 <img src="https://latex.codecogs.com/png.latex?\Huge q_l = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_l}(\bf{x})" /> 
  
-<img src="https://latex.codecogs.com/png.latex?\Huge q_l = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_l}(\bf{x})" /> 
+<img src="https://latex.codecogs.com/png.latex?\Huge q_r = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_r}(\bf{x})" /> 
  
  
  
