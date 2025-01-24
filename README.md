@@ -106,7 +106,7 @@ Let <img src="https://latex.codecogs.com/png.latex?h(\mathbf{x})\geq%200" /> be 
 </p>
  
  
-<p align="center"><img src="indicator.png" width="20"</p> 
+<p align="center"><img src="indicator.png" width="40"</p> 
 where <img src="https://latex.codecogs.com/png.latex?\mathbbm{1}_i(\mathbf{x})" /> is the indicator function on set $i$ , $A_l$ and $A_r$ denote the support of the left and right lungs respectively. These integrals can be numerically calculated using masks for left and right lungs (row 3) obtained using the AI-based tool for lung segmentation in [4]. For the images shown, values are: $q_l= 327$ and $q_r=60$ for the first column (left dominant) and
 $q_l=48$ and  $q_r=333$ for the second (right dominant). 
 
