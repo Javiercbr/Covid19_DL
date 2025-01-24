@@ -95,7 +95,9 @@ Heatmaps provide information on the regions of the image that activate the neura
 
 $$\Huge q_r = \int_{A_r} d\bf{x}  h(\bf{x})$$
 
- Let $$ h(\bf{x})\geq 0 $$ be the heatmap where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
+$ h(\bf{x})\geq 0 $
+
+ Let $ h(\bf{x})\geq 0 $ be the heatmap where <img src="https://render.githubusercontent.com/render/math?math={\bf{x}\in \mathbb{R}^2 }">. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
 
  <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_l}(\bf{x}) , }">
  
