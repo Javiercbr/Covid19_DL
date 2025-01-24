@@ -97,11 +97,11 @@ $$\Huge q_r = \int_{A_r} d\bf{x}  h(\bf{x})$$
 
 
 
- Let $h(\bf{x})\geq 0$ be the heatmap where $\bf{x}\in \mathbb{R}^2$. Quantities <img src="https://render.githubusercontent.com/render/math?math={ q_l }"> and  <img src="https://render.githubusercontent.com/render/math?math={ q_r }"> are defined as
+ Let $h(\bf{x})\geq 0$ be the heatmap where $\bf{x}\in \mathbb{R}^2$. Quantities $q_l$ and $q_r$ are defined as
 
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_l = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_l}(\bf{x}) , }">
+$$\Huge q_l = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_l}(\bf{x}),$$
  
- <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_r}(\bf{x}) , }">
+$$\Huge q_r = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_r}(\bf{x}),$$
  
 <!--  <img src="https://render.githubusercontent.com/render/math?math={ \Huge q_r = \int_{A_r}  d\bf{x}\, h(\bf{x}), }"> -->
  
