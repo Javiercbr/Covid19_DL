@@ -14,7 +14,7 @@ The model was trained with labeled Covid19 and normal images from the database i
 </p>
 
 
-A total number of 108 subjects was included (54 normal and 54 Covid19). Each image is a slice of a CT volume that consists of approximately 200 slices. Images positives for Covid19 were labeled by experts as explained in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in next figure where <img src="https://render.githubusercontent.com/render/math?math=z\in\[0, 1]"> is the normalized position of the slice, i.e. <img src="https://render.githubusercontent.com/render/math?math=z=0"> is the first slice and <img src="https://render.githubusercontent.com/render/math?math=z=1"> the last one.
+A total number of 108 subjects was included (54 normal and 54 Covid19). Each image is a slice of a CT volume that consists of approximately 200 slices. Images positives for Covid19 were labeled by experts as explained in [1]. Normal images are sampled uniformly form a volume of a normal patient. The slice distribution on normal and Covid19 images is shown in next figure where $z\in\[0, 1]$ is the normalized position of the slice, i.e. $z=0$ is the first slice and $z=1$ the last one.
 
 
  
