@@ -25,6 +25,9 @@ A total number of 108 subjects was included (54 normal and 54 Covid19). Each ima
 
 
 
+<img src="https://latex.codecogs.com/png.latex?\mathbb{1}_i(\mathbf{x})" />
+
+
 Covid19 slices exhibit a normal shaped distribution whereas normal slices are more uniformly distributed. The table summarizes the distribution of samples in each dataset. There is no patient overlap among sets. 
 
 Set| Number of samples | Covid19 [%]
