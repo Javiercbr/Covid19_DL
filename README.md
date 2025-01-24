@@ -97,7 +97,7 @@ $$\Huge q_r = \int_{A_r} d\bf{x}  h(\mathbf{x})$$
 
 
 
- Let $h(\bf{x})\geq 0$ be the heatmap where $\bf{x}\in \mathbb{R}^2$. Quantities $q_l$ and $q_r$ are defined as
+ Let $h(\bf{x})\geq 0$ be the heatmap where <img src="https://latex.codecogs.com/png.latex?\bf{x}\in \mathbb{R}^2" /> $\bf{x}\in \mathbb{R}^2$. Quantities $q_l$ and $q_r$ are defined as
 
 $$\Huge q_l = \int_{\mathbb{R}^2}  d\bf{x}\, h(\bf{x}) \, \mathbb{1}_{A_l}(\bf{x}),$$
  
